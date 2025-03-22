@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100..900&family=Inter:opsz,wght@14..32,100..900&display=swap");
+:root {
+  --gray-color: #303133;
+  --green-color: #03ab02;
+  --light-gray-color: #7f8188;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /* Default font */
+  font-family: "Inter", sans-serif;
+
+  /* Header font */
+  /* font-family: "Albert Sans", sans-serif; */
+}

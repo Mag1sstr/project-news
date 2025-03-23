@@ -23,6 +23,7 @@ export default function Header() {
               <li className={styles.link}>Auto</li>
             </ul>
           </nav>
+
           <div className={styles.curr}>
             {data!.map(({ name, price, img }) => (
               <div className={styles.item}>

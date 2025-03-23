@@ -3,6 +3,7 @@
   --gray-color: #303133;
   --green-color: #03ab02;
   --light-gray-color: #7f8188;
+  --body-background: #f1f2f1;
 }
 * {
   margin: 0;
@@ -13,6 +14,7 @@ ul {
   list-style: none;
 }
 body {
+  background-color: var(--body-background);
   /* Default font */
   font-family: "Inter", sans-serif;
 

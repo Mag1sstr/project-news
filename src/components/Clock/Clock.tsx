@@ -15,10 +15,12 @@ export default function Clock() {
   const seconds = time.getSeconds();
 
   return (
-    <div className={styles.clock}>
-      {hours < 10 ? `0${hours}` : hours}:
-      {minutes < 10 ? `0${minutes}` : minutes}:
-      {seconds < 10 ? `0${seconds}` : seconds}
+    <div className={styles.wrapper}>
+      <div className={styles.clock}>
+        {hours < 10 ? `0${hours}` : hours}:
+        {minutes < 10 ? `0${minutes}` : minutes}:
+        {seconds < 10 ? `0${seconds}` : seconds}
+      </div>
     </div>
   );
 }

@@ -9,10 +9,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+ul {
+  list-style: none;
+}
 body {
   /* Default font */
   font-family: "Inter", sans-serif;
 
   /* Header font */
   /* font-family: "Albert Sans", sans-serif; */
+}
+.conteiner {
+  max-width: 1344px;
+  margin: 0 auto;
+  padding: 0 12px;
 }

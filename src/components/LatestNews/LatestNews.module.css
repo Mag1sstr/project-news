@@ -1,0 +1,20 @@
+.inner {
+  width: 100%;
+  background: #fff;
+  padding: 32px 24px;
+}
+.main {
+  width: 966px;
+}
+.main__image {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 24px;
+  img {
+    transition: 0.2s;
+    width: 100%;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+}

@@ -3,13 +3,13 @@ import { useCurrencies } from "../../hooks/useCurrencies";
 import Clock from "../Clock/Clock";
 
 export default function Header() {
-  const { data, isLoading } = useCurrencies();
+  // const { data, isLoading } = useCurrencies();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <header className={styles.header}>
@@ -25,12 +25,12 @@ export default function Header() {
           </nav>
 
           <div className={styles.curr}>
-            {data!.map(({ name, price, img }) => (
+            {/* {data!.map(({ name, price, img }) => (
               <div className={styles.item}>
                 <img className={styles.icon} src={img} alt={name} />
                 {price}
               </div>
-            ))}
+            ))} */}
           </div>
           <Clock />
         </div>

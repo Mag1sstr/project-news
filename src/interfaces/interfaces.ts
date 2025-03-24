@@ -1,5 +1,5 @@
 export interface ICurrencies {
   name: string;
-  price: number;
+  price: number | unknown;
   img: string;
 }

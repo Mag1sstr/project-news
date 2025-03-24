@@ -1,3 +1,4 @@
+import NewsCard from "../NewsCard/NewsCard";
 import styles from "./LatestNews.module.css";
 
 function LatestNews() {
@@ -10,6 +11,13 @@ function LatestNews() {
               src="https://static.tengrinews.kz/userdata/news/2025/news_565794/thumb_b/photo_506028.jpeg.webp"
               alt=""
             />
+          </div>
+          <div className={styles.cards}>
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
           </div>
         </div>
       </div>

@@ -1,0 +1,41 @@
+.widget {
+  width: 298px;
+}
+.tab {
+  width: 100%;
+  display: flex;
+}
+.tab__btn {
+  width: 50%;
+  height: 33px;
+  border-radius: 4px 4px 0 0;
+  font-size: 12px;
+  background: transparent;
+  font-weight: 600;
+  border: none;
+  color: #292d39b3;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.active {
+  color: #fff;
+  background: var(--green-color);
+}
+.tab__btn:hover {
+  background: #ddd;
+}
+.tab__btn.active:hover {
+  color: #fff;
+  background: var(--green-color);
+}
+.content {
+  max-height: 835px;
+  overflow: auto;
+}
+.content::-webkit-scrollbar {
+  width: 5px;
+}
+.content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: var(--green-color);
+}

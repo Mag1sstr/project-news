@@ -1,4 +1,6 @@
 .inner {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   background: #fff;
   padding: 32px 24px;
@@ -7,6 +9,7 @@
   width: 966px;
 }
 .main__image {
+  position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 24px;
@@ -17,6 +20,23 @@
   img:hover {
     transform: scale(1.1);
   }
+}
+.main__info {
+  color: #fff;
+  width: 914px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15px;
+}
+.main__title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.main__item {
+  margin-top: 16px;
+  font-size: 12px;
 }
 .cards {
   display: flex;

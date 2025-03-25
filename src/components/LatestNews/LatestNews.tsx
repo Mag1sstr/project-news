@@ -1,27 +1,45 @@
+import {
+  // getLatestNews,
+  useGetLatestNewsQuery,
+} from "../../api/apiNews/apiNews";
+import { useFetch } from "../../hooks/useFetch";
 import NewsCard from "../NewsCard/NewsCard";
 import styles from "./LatestNews.module.css";
+import { INews } from "../../interfaces/interfaces";
+import { useState } from "react";
+import Widget from "../Widget/Widget";
 
 function LatestNews() {
+  const { data, isLoading } = useGetLatestNewsQuery([]);
+
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
+
   return (
     <section className={styles.latest}>
       <div className={styles.inner}>
         <div className={styles.main}>
           <div className={styles.main__image}>
             <img
-              src="https://static.tengrinews.kz/userdata/news/2025/news_565794/thumb_b/photo_506028.jpeg.webp"
-              alt=""
+              src={data?.articles[0].urlToImage}
+              alt={data?.articles[0].urlToImage}
             />
+            <div className={styles.main__info}>
+              <p className={styles.main__title}>{data?.articles[0].title}</p>
+              <p className={styles.main__item}>
+                {data?.articles[0].publishedAt}
+              </p>
+            </div>
           </div>
           <div className={styles.cards}>
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
-            <NewsCard />
+            {data?.articles.slice(1, 7).map((item) => (
+              <NewsCard key={item.source.id} {...item} />
+            ))}
           </div>
         </div>
+        <Widget />
       </div>
-      <div className={styles.widget}></div>
     </section>
   );
 }

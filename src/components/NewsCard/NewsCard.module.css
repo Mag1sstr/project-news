@@ -1,6 +1,7 @@
 .card {
   font-size: 18px;
   width: 305px;
+  cursor: pointer;
 }
 .wrapper {
   width: 100%;

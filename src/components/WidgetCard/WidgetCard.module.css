@@ -1,0 +1,19 @@
+.card {
+  padding: 8px 0;
+  border-bottom: 1px solid #eaeaec;
+}
+.title {
+  min-height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0;
+  cursor: pointer;
+}
+.title:hover {
+  color: var(--green-color);
+}
+.info {
+  margin: 8px 0;
+  font-size: 12px;
+  color: var(--light-gray-color);
+}

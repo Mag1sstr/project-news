@@ -16,6 +16,7 @@
   color: #292d39b3;
   cursor: pointer;
   transition: 0.1s;
+  border-bottom: 1px solid #eaeaec;
 }
 .active {
   color: #fff;

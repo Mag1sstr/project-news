@@ -1,11 +1,16 @@
 import { useState } from "react";
 import styles from "./Widget.module.css";
-import { useGetPopularNewsQuery } from "../../api/apiNews/apiNews";
+import {
+  useGetLatestNewsQuery,
+  useGetPopularNewsQuery,
+} from "../../api/apiNews/apiNews";
+import WidgetCard from "../WidgetCard/WidgetCard";
 
 export default function Widget() {
-  const [tab, setTab] = useState("popular");
-  const { data, isLoading } = useGetPopularNewsQuery([]);
-  console.log(data);
+  const [tab, setTab] = useState("latest");
+  const { data: popular } = useGetPopularNewsQuery([]);
+  const { data: latest } = useGetLatestNewsQuery([]);
+  // console.log(data);
 
   return (
     <div className={styles.widget}>
@@ -24,9 +29,20 @@ export default function Widget() {
         </button>
       </div>
       <div className={styles.content}>
-        {data?.articles.map((item) => {
-          return <div>{item.title}</div>;
-        })}
+        {tab === "popular" && (
+          <>
+            {popular?.articles.map((item) => {
+              return <WidgetCard key={item.url} {...item} />;
+            })}
+          </>
+        )}
+        {tab === "latest" && (
+          <>
+            {latest?.articles.map((item) => {
+              return <WidgetCard key={item.url} {...item} />;
+            })}
+          </>
+        )}
       </div>
     </div>
   );

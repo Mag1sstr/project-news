@@ -8,6 +8,7 @@ import styles from "./LatestNews.module.css";
 import { INews } from "../../interfaces/interfaces";
 import { useState } from "react";
 import Widget from "../Widget/Widget";
+import { formatDate } from "../../helpers/formatDate";
 
 function LatestNews() {
   const { data, isLoading } = useGetLatestNewsQuery([]);
@@ -28,13 +29,13 @@ function LatestNews() {
             <div className={styles.main__info}>
               <p className={styles.main__title}>{data?.articles[0].title}</p>
               <p className={styles.main__item}>
-                {data?.articles[0].publishedAt}
+                {formatDate(data?.articles[0].publishedAt!)}
               </p>
             </div>
           </div>
           <div className={styles.cards}>
             {data?.articles.slice(1, 7).map((item) => (
-              <NewsCard key={item.source.id} {...item} />
+              <NewsCard key={item.content} {...item} />
             ))}
           </div>
         </div>

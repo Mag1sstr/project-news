@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <section>
       <div className="conteiner">
-        <Menu />
+        {/* <Menu /> */}
         <LatestNews />
       </div>
     </section>

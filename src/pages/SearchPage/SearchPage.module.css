@@ -1,0 +1,19 @@
+.inner {
+  width: 100%;
+  background: #fff;
+  padding: 32px 24px;
+}
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.text {
+  margin-bottom: 36px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 24px;
+}

@@ -13,6 +13,10 @@
 ul {
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: #000;
+}
 img {
   border-radius: 4px;
 }

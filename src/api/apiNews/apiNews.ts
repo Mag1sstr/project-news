@@ -1,21 +1,8 @@
-import axios from "axios";
-import { ILatestResponse, INews } from "../../interfaces/interfaces";
+// import axios from "axios";
+import { ILatestResponse } from "../../interfaces/interfaces";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-
-// export async function getLatestNews(params: {}) {
-//   const response = await axios.get<INews[]>(
-//     `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`,
-//     {
-//       params: {
-//         ...params,
-//         apiKey: API_KEY,
-//       },
-//     }
-//   );
-//   return response.data;
-// }
 
 export const newsApi = createApi({
   reducerPath: "newsApi",
@@ -30,7 +17,19 @@ export const newsApi = createApi({
       query: () =>
         `everything?sources=bbc-news&sortBy=popularity&apiKey=${API_KEY}`,
     }),
+    getSearchNews: builder.query<ILatestResponse, string>({
+      query: (searchValue: string) => ({
+        url: `https://newsapi.org/v2/everything?q=${searchValue}`,
+        params: {
+          apiKey: API_KEY,
+        },
+      }),
+    }),
   }),
 });
 
-export const { useGetLatestNewsQuery, useGetPopularNewsQuery } = newsApi;
+export const {
+  useGetLatestNewsQuery,
+  useGetPopularNewsQuery,
+  useGetSearchNewsQuery,
+} = newsApi;

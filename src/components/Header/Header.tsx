@@ -1,6 +1,7 @@
 import styles from "./Header.module.css";
 import { useCurrencies } from "../../hooks/useCurrencies";
 import Clock from "../Clock/Clock";
+import { formatDate } from "../../helpers/formatDate";
 
 export default function Header() {
   // const { data, isLoading } = useCurrencies();
@@ -25,14 +26,9 @@ export default function Header() {
           </nav>
 
           <div className={styles.curr}>
-            {/* {data!.map(({ name, price, img }) => (
-              <div className={styles.item}>
-                <img className={styles.icon} src={img} alt={name} />
-                {price}
-              </div>
-            ))} */}
+            <p>{formatDate(new Date().toString())}</p>
+            <Clock />
           </div>
-          <Clock />
         </div>
       </div>
     </header>
